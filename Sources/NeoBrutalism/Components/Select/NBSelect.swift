@@ -126,11 +126,15 @@ private extension NBSelect {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.vertical, theme.padding * 0.9)
                                     .padding(.horizontal, theme.padding)
+                                if isSelected{
+                                    Image(systemName: "checkmark")
+                                        .padding(8)
+                                }
                             }
                             .background(
                                 // Rounded outline for selected row
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke(theme.border, lineWidth: isSelected ? theme.borderWidth * 2 : 0)
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .stroke(theme.border, lineWidth: isSelected ? theme.borderWidth * 1.5 : 0)
                             )
                             .contentShape(Rectangle())
                         }
