@@ -81,3 +81,31 @@ public struct NBAccordionDisclosureGroupStyle: DisclosureGroupStyle {
 
     }.padding()
 }
+
+@available(iOS 18.0, *)
+#Preview("NeoBrutalismAccordion Style", traits: .modifier(NBPreviewHelper())) {
+    VStack(spacing: 18) {
+        DisclosureGroup("Select a Spell") {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Piertotum Locomotor")
+                Text("Expecto Patronum")
+                Text("Expelliarmus")
+                Text("Alohomora")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .disclosureGroupStyle(.neoBrutalismAccordion)
+
+        DisclosureGroup("House") {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Gryffindor")
+                Text("Slytherin")
+                Text("Ravenclaw")
+                Text("Hufflepuff")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .disclosureGroupStyle(.neoBrutalismAccordion)
+    }
+    .padding()
+}
